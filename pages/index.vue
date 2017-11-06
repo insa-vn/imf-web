@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="imf-container">
     <div>
       <logo/>
       <h1 class="title">
@@ -10,7 +10,7 @@
       </h2>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">Play</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">Who we are</a>
+        <a href="/whoweare" target="_blank" class="button--grey">Who we are</a>
       </div>
     </div>
   </section>
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style>
-.container {
+.imf-container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
