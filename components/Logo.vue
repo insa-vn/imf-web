@@ -25,14 +25,14 @@
 }
 
 .Rectangle--one {
-  border: 180px solid #3c7f70;
+  border: 180px solid #ff4e4e;
 }
 
 .Rectangle--two {
   top: 30px;
   left: 35px;
   animation: goright 0.5s linear forwards 3.5s;
-  border: 80px solid #364a5e;
+  border: 80px solid #ffffffbf;
 }
 
 @keyframes turn {
