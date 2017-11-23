@@ -2,10 +2,15 @@
   <transition name="play">
     <div class="play-container columns">
       <div class="column">
-        <img src="http://ksassets.timeincuk.net/wp/uploads/sites/55/2017/05/Jon-Snow-920x584.png" />
+        <img
+          @click="$store.commit('shuffleSecondItem')"
+          :src="firstItem"
+        />
       </div>
       <div class="column">
-        <img src="https://www.unilad.co.uk/wp-content/uploads/2016/08/Khal-Drogo.jpg"/>
+        <img
+          @click="$store.commit('shuffleFirstItem')"
+          :src="$store.state.items[Object.keys($store.state.items)[$store.state.currentItems[1]]].image_url"/>
       </div>
     </div>
   </transition>
@@ -24,3 +29,18 @@
   padding: 32px;
 }
 </style>
+
+<script>
+import { mapState } from 'vuex'
+
+export default {
+  computed: mapState({
+    firstItem (state) {
+      const currentId = state.currentItems[0]
+      const correspondingItemId = Object.keys(state.items)[currentId]
+      const item = state.items[correspondingItemId]
+      return item.image_url
+    }
+  })
+}
+</script>
