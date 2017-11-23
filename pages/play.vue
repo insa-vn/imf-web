@@ -1,4 +1,4 @@
-<<template>
+<template>
   <transition name="play">
     <div class="play-container columns">
       <div class="column">
