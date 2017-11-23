@@ -16,5 +16,7 @@ html, body, {
     padding: 4px 16px;
     text-align: right;
     font-size: 12px;
+    background-color: initial;
+    color: white;
 }
 </style>
