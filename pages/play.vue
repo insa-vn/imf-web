@@ -32,6 +32,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import axios from 'axios'
 
 export default {
   computed: mapState({
@@ -41,6 +42,17 @@ export default {
       const item = state.items[correspondingItemId]
       return item.image_url
     }
-  })
+  }),
+  async fetch ({ store, params, error }) {
+    let data
+    try {
+      data = await axios.get(
+        'http://localhost:8000/api/get-img-urls?character=John%20Snow&nbimgs=20'
+      ).data
+    } catch (e) {
+      error({ statusCode: 500, message: e })
+    }
+    store.commit('loadData', data)
+  }
 }
 </script>

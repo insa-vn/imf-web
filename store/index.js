@@ -31,6 +31,9 @@ const createStore = () => {
           Object.keys(items).length,
           [state.currentItems[0], state.currentItems[1]]
         )]
+      },
+      loadData (state, { data }) {
+        state.items = data.Data
       }
     }
   })
