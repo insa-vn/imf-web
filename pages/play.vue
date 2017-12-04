@@ -66,7 +66,7 @@ export default {
     } catch (e) {
       error({ statusCode: 500, message: e })
     }
-    store.commit('loadData', data)
+    store.commit('loadData', { data })
   }
 }
 </script>
