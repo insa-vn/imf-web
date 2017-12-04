@@ -1,5 +1,6 @@
 <template>
   <transition name="play">
+    <div>
     <div class="play-container columns">
       <div class="column">
         <img
@@ -12,6 +13,12 @@
           @click="$store.commit('shuffleFirstItem')"
           :src="$store.state.items[Object.keys($store.state.items)[$store.state.currentItems[1]]].image_url"/>
       </div>
+    </div>
+    <div class = "container">
+    <div class="links">
+      <router-link to="results" class="button --primary">See results</router-link>
+    </div>
+    </div>
     </div>
   </transition>
 </template>
@@ -28,6 +35,13 @@
   text-align: center;
   padding: 32px;
 }
+
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 </style>
 
 <script>
